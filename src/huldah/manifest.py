@@ -104,12 +104,12 @@ def build_manifest() -> Manifest:
             ),
             capability(
                 "analyze_ui_simulation_report",
-                "Summarise a cairn-ui-sim JSON report as deterministic human-load evidence, including "
+                "Summarise a huldah-ui-sim JSON report as deterministic human-load evidence, including "
                 "HCI phases, human systems, qualitative risk, suggested Cairn blocks, and measured "
                 "functional layout load snapshots when present.",
                 input_schema={
                     "type": "object",
-                    "properties": {"report": {"type": "object", "description": "cairn-ui-sim JSON report"}},
+                    "properties": {"report": {"type": "object", "description": "huldah-ui-sim JSON report"}},
                     "required": ["report"],
                 },
                 output_schema={

@@ -4,7 +4,7 @@
 - **Cairn** (process_language) - `/home/cello/domains/Cairn`
   - evidence: Cairn repo or UI scenario docs detected
   - observe: Use Cairn as the shared language for observer evidence, role-play, and annotations.
-  - observe: Run cairn-ui-pipeline and cairn-live-observe to generate reviewable artifacts.
+  - observe: Run huldah-ui-pipeline and huldah-live-observe to generate reviewable artifacts.
 - **Ed** (uses_llm_queue) - `/home/cello/domains/Ed`
   - evidence: Hoglah dependency/reference detected
   - observe: Observe model-call submissions, job ids, retries, and queue latency where this product uses Hoglah.

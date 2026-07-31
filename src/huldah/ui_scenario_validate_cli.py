@@ -1,4 +1,4 @@
-"""CLI for validating Cairn UI simulation scenario files."""
+"""CLI for validating Huldah UI simulation scenario files."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from huldah.ui_scenarios import format_scenario_validation_report, load_ui_scena
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="huldah-ui-scenario-validate",
-        description="Validate a Cairn UI simulation scenario JSON file.",
+        description="Validate a Huldah UI simulation scenario JSON file.",
     )
     parser.add_argument("scenario", help="Path to a JSON UI simulation scenario")
     parser.add_argument("-f", "--format", choices=("text", "json"), default="text", dest="output_format")

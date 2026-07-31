@@ -72,23 +72,23 @@ Suggested tags:
 Before wiring observers, discover likely observation surfaces:
 
 ```bash
-cairn-system-discover ../Noa --output docs/analysis/noa-system-discovery.md
+huldah-system-discover ../Noa --output docs/analysis/noa-system-discovery.md
 ```
 
 For a sibling checkout layout, run discovery at the parent directory as well:
 
 ```bash
-cairn-system-discover ~/domains --output docs/analysis/family-system-discovery.md
+huldah-system-discover ~/domains --output docs/analysis/family-system-discovery.md
 ```
 
 The discovery step is intentionally lightweight. It looks for runtime-host
 signals, Galeed trace/log surfaces, Playwright-capable UIs, Hoglah-style queues,
 and Cairn scenario/spec assets, then proposes an observation plan.
 
-`cairn-live-observe` reads JSON or JSONL observation events and produces a Cairn-style evidence report:
+`huldah-live-observe` reads JSON or JSONL observation events and produces a Cairn-style evidence report:
 
 ```bash
-cairn-live-observe docs/observations/noa-live-observer-sample.jsonl \
+huldah-live-observe docs/observations/noa-live-observer-sample.jsonl \
   --title "Noa live observer sample" \
   --output docs/analysis/noa-live-observer-sample.md
 ```
@@ -96,7 +96,7 @@ cairn-live-observe docs/observations/noa-live-observer-sample.jsonl \
 When the source is a Galeed trace export, use the bridge command:
 
 ```bash
-cairn-galeed-observe docs/galeed/sample-trace-events.jsonl \
+huldah-galeed-observe docs/galeed/sample-trace-events.jsonl \
   --title "Galeed trace bridge sample" \
   --observations-output docs/observations/galeed-trace-observations.jsonl \
   --output docs/analysis/galeed-trace-observer-sample.md
@@ -152,7 +152,7 @@ It should:
 Live product
   -> Galeed logs / UI probes / agent traces / feedback
   -> observation JSONL
-  -> cairn-live-observe
+  -> huldah-live-observe
   -> Cairn evidence report
   -> optional role-play or output-review agents
   -> issues, annotations, or process improvements

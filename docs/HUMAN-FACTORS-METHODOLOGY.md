@@ -111,7 +111,7 @@ Always include `rationale`. A score without rationale is decoration.
 
 ## Offline Analyzer
 
-`cairn-human-factors` runs a portable offline analysis. It looks for structured
+`huldah-human-factors` runs a portable offline analysis. It looks for structured
 Cairn cues and produces:
 
 - factor findings,
@@ -125,7 +125,7 @@ notice common patterns and start a review, not smart enough to replace one.
 
 ## Live Observation
 
-`cairn-live-observe` is the runtime counterpart to the offline analyzer. It
+`huldah-live-observe` is the runtime counterpart to the offline analyzer. It
 summarises JSON or JSONL observation events from UI probes, logs, agent traces,
 queue events, feedback, and output-review agents.
 

@@ -72,5 +72,5 @@ carry Cairn-specific cues in metadata:
 ```
 
 The helper `observation_to_galeed_trace_event` maps Cairn observation kinds to
-Galeed event types, while `cairn-galeed-observe` maps Galeed exports back into
+Galeed event types, while `huldah-galeed-observe` maps Galeed exports back into
 Cairn evidence reports.

@@ -6,7 +6,7 @@ form design, HCI touchpoints, visual hierarchy, and cognitive aesthetic, but it
 focuses specifically on whether the layout makes the user's functional task
 easy to scan, traverse, and complete.
 
-This is not eye tracking. Cairn estimates visual and pointer traversal load
+This is not eye tracking. Huldah estimates visual and pointer traversal load
 from UI geometry, relationships, and likely interaction sequence. Treat it as a
 design heuristic that points to review questions, not as a direct measurement
 of a person.
@@ -60,7 +60,7 @@ Use these dimensions when reviewing a form or operational UI:
 
 ## JSON Input
 
-`cairn-layout-load` accepts a JSON object:
+`huldah-layout-load` accepts a JSON object:
 
 ```json
 {
@@ -85,16 +85,16 @@ For human-AI workflows, model relationships such as `ai_output_to_evidence`,
 `uncertainty_to_action`, and `override_for_recommendation` when they are
 important to trust calibration.
 
-In Cairn UI scenarios, use the `measureLayout` action to collect this geometry
-during `cairn-ui-sim`. The resulting `layoutLoad` snapshots are consumed by
-`cairn-ui-evidence` automatically.
+In Huldah UI scenarios, use the `measureLayout` action to collect this geometry
+during `huldah-ui-sim`. The resulting `layoutLoad` snapshots are consumed by
+`huldah-ui-evidence` automatically.
 
 ## CLI
 
 ```bash
-cairn-layout-load po-layout.json -o po-layout-load.md
-cairn-layout-load po-layout.json -o po-layout-load.md --svg-output po-layout-overlay.svg
-cairn-layout-load po-layout.json -f json
+huldah-layout-load po-layout.json -o po-layout-load.md
+huldah-layout-load po-layout.json -o po-layout-load.md --svg-output po-layout-overlay.svg
+huldah-layout-load po-layout.json -f json
 ```
 
 The report includes metrics, findings, and suggested Cairn blocks such as:

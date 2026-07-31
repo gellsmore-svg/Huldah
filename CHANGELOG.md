@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased]
+- Docs corrected to name the `huldah-*` commands: the moved documentation still
+  told readers to run `cairn-ui-sim`, `cairn-layout-load` and friends, none of
+  which exist after the split.
+- The UI-simulation runner's private env contract is now `HULDAH_UI_*` (was
+  `CAIRN_UI_*`). The CLI sets these and its own bundled `ui_sim_runner.mjs`
+  reads them, and both ship in the same wheel, so the rename is atomic.
+
 ## [0.1.0] - 2026-07-31
 Initial release — extracted from `cairn-lang` v0.8.2 as the human-systems
 analysis half of the Cairn split (see `Noa/docs/cairn-split-and-rename.md`).

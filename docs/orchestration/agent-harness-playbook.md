@@ -26,13 +26,13 @@ interpretation, prioritisation, synthesis, and careful explanation.
 3. Validate Cairn process files:
 
    ```bash
-   cairn-validate process.cairn.md
+   deborah-validate process.cairn.md
    ```
 
    To generate this sequence from available artifacts, use:
 
    ```bash
-   cairn-agent-harness-plan \
+   huldah-agent-harness-plan \
      --process process.cairn.md \
      --ui-evidence ui-sim-report.json \
      --layout layout.json \
@@ -46,7 +46,7 @@ interpretation, prioritisation, synthesis, and careful explanation.
    To emit a reviewable shell sequence:
 
    ```bash
-   cairn-agent-harness-plan \
+   huldah-agent-harness-plan \
      --process process.cairn.md \
      --ui-evidence ui-sim-report.json \
      --check-files \
@@ -61,20 +61,20 @@ interpretation, prioritisation, synthesis, and careful explanation.
 4. Run deterministic human-factors analysis:
 
    ```bash
-   cairn-human-factors process.cairn.md --format json --output human-factors.json
+   huldah-human-factors process.cairn.md --format json --output human-factors.json
    ```
 
 5. If UI simulation evidence or layout JSON exists, run HCI/layout analysis:
 
    ```bash
-   cairn-ui-evidence ui-sim-report.json --format json --output ui-evidence.json
-   cairn-layout-load layout.json --format json --output layout-load.json
+   huldah-ui-evidence ui-sim-report.json --format json --output ui-evidence.json
+   huldah-layout-load layout.json --format json --output layout-load.json
    ```
 
 6. Generate OKF-traceable interface recommendations:
 
    ```bash
-   cairn-recommend-interface-changes ui-sim-report.json \
+   huldah-recommend-interface-changes ui-sim-report.json \
      --output interface-recommendations.md \
      --future-svg-output future-state.svg
    ```
@@ -82,7 +82,7 @@ interpretation, prioritisation, synthesis, and careful explanation.
 7. Generate a reviewable report:
 
    ```bash
-   cairn-generate-report \
+   huldah-generate-report \
      --input process.cairn.md \
      --interface-evidence ui-sim-report.json \
      --format markdown \

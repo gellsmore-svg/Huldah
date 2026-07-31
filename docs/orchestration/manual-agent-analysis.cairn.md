@@ -30,18 +30,18 @@ PROCESS — Analyze a repository, process, or interface using Cairn.
 
 5. Analyze HCI touchpoints and layout load when an interface is present. [LLM, TOOL]
    PURPOSE: Make UI-mediated human work explicit across awareness, orientation, execution, feedback, recovery, handoff, and adaptation.
-   TOOLING: Use screenshots, Playwright evidence, layout JSON, visible UI descriptions, `cairn-ui-evidence`, `cairn-layout-load`, and the corresponding Python APIs where available.
+   TOOLING: Use screenshots, Playwright evidence, layout JSON, visible UI descriptions, `huldah-ui-evidence`, `huldah-layout-load`, and the corresponding Python APIs where available.
    OUTPUT: HCI_TOUCHPOINTS, FUNCTIONAL_LAYOUT_LOAD
 
 6. Generate interface recommendations with mandatory OKF traceability. [LLM, TOOL]
    PURPOSE: Convert findings into concrete changes.
    CONSTRAINTS: Every recommendation must cite exact OKF file and concept. No recommendation may appear without rationale and priority.
-   TOOLING: Prefer `cairn-recommend-interface-changes` or `cairn.recommend_interface_changes` when structured UI evidence exists.
+   TOOLING: Prefer `huldah-recommend-interface-changes` or `cairn.recommend_interface_changes` when structured UI evidence exists.
    OUTPUT: RECOMMENDATIONS
 
 7. Produce a report. [LLM, TOOL]
    PURPOSE: Give the human a reviewable deliverable.
-   TOOLING: Prefer `cairn-generate-report` or `cairn.build_analysis_report` when process text or UI evidence is available.
+   TOOLING: Prefer `huldah-generate-report` or `cairn.build_analysis_report` when process text or UI evidence is available.
    OUTPUT: executive_summary, current_state_analysis, future_state_recommendations, risks, mitigations, references, open_questions.
 
 8. Validate and self-check the output. [LLM, READONLY]

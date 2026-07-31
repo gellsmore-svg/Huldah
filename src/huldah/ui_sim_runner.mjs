@@ -14,11 +14,11 @@ if (!scenarioPath) {
 const resolvedScenarioPath = path.resolve(scenarioPath)
 const scenarioDir = path.dirname(resolvedScenarioPath)
 const scenario = JSON.parse(await fs.readFile(resolvedScenarioPath, 'utf8'))
-const baseUrl = process.env.CAIRN_UI_BASE_URL || scenario.baseUrl || 'http://localhost:5273'
-const outputSetting = process.env.CAIRN_UI_OUTPUT || scenario.output || '../analysis/ui-sim-report.json'
+const baseUrl = process.env.HULDAH_UI_BASE_URL || scenario.baseUrl || 'http://localhost:5273'
+const outputSetting = process.env.HULDAH_UI_OUTPUT || scenario.output || '../analysis/ui-sim-report.json'
 const output = path.isAbsolute(outputSetting) ? outputSetting : path.resolve(scenarioDir, outputSetting)
-const headed = process.env.CAIRN_UI_HEADED === '1'
-const defaultTimeout = Number(process.env.CAIRN_UI_TIMEOUT || scenario.timeout || 30000)
+const headed = process.env.HULDAH_UI_HEADED === '1'
+const defaultTimeout = Number(process.env.HULDAH_UI_TIMEOUT || scenario.timeout || 30000)
 const screenshotsSetting = scenario.screenshotsDir || path.join(path.dirname(output), 'screenshots')
 const screenshotsDir = path.isAbsolute(screenshotsSetting)
   ? screenshotsSetting
