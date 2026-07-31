@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "huldah"
+version = "0.1.0"
+description = "Huldah — human-systems analysis over Deborah process descriptions: human factors, UI evidence, layout load, live observation, and interface recommendations."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+    {name = "gellsmore-svg"},
+]
+keywords = ["human-factors", "usability", "observability", "process", "agentic", "analysis", "local-first"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Typing :: Typed",
+]
+# Huldah reads and renders Deborah process documents; the language is its only
+# hard dependency. The LLM / browser / export surfaces stay optional so the
+# offline analysers can be adopted without pulling a provider stack.
+dependencies = ["deborah>=0.9"]
+
+[project.scripts]
+huldah-agent-harness-plan = "huldah.agent_harness_cli:main"
+huldah-human-factors = "huldah.human_factors_cli:main"
+huldah-ui-sim = "huldah.ui_sim_cli:main"
+huldah-ui-evidence = "huldah.ui_evidence_cli:main"
+huldah-ui-roleplay = "huldah.ui_roleplay_cli:main"
+huldah-ui-annotations = "huldah.ui_annotations_cli:main"
+huldah-ui-scenario-validate = "huldah.ui_scenario_validate_cli:main"
+huldah-ui-pipeline = "huldah.ui_pipeline_cli:main"
+huldah-live-observe = "huldah.live_observer_cli:main"
+huldah-system-discover = "huldah.system_discovery_cli:main"
+huldah-galeed-observe = "huldah.galeed_observe_cli:main"
+huldah-layout-load = "huldah.layout_load_cli:main"
+huldah-recommend-interface-changes = "huldah.interface_recommendations_cli:main"
+huldah-generate-report = "huldah.reporting_cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gellsmore-svg/Huldah"
+Repository = "https://github.com/gellsmore-svg/Huldah"
+Issues = "https://github.com/gellsmore-svg/Huldah/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "pyyaml>=6.0"]
+# The docx/pdf exporters live in Deborah's render layer; Huldah's reporting
+# only calls export_view, so it defers the extra rather than duplicating it.
+export = ["deborah[export]"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+huldah = ["ui_sim_runner.mjs", "py.typed"]
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+# Pin the rule set explicitly rather than inheriting ruff's defaults: ruff 0.16
+# widened those defaults, which silently turns a green gate red on a tool
+# upgrade. This is the historical default set (pyflakes + the pycodestyle
+# errors worth gating), so the gate means the same thing on every ruff version.
+select = ["E4", "E7", "E9", "F"]
