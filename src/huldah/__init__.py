@@ -12,6 +12,8 @@ The Cairn document format keeps its name: Huldah still reads and writes
 `.cairn.md` sources and Cairn annotation blocks. Only the packages were renamed.
 """
 
+from importlib.metadata import PackageNotFoundError, version as _pkg_version
+
 from huldah.agent_harness import (
     AgentHarnessPlan,
     AgentHarnessStep,
@@ -61,7 +63,12 @@ from huldah.ui_evidence import (
 )
 from huldah.ui_scenarios import format_scenario_validation_report, validate_ui_scenario
 
-__version__ = "0.1.0"
+try:
+    # Single source of truth: read the installed distribution rather than
+    # restating the version here, so it cannot drift from pyproject.
+    __version__ = _pkg_version("huldah")
+except PackageNotFoundError:  # running straight from a source checkout
+    __version__ = "0.0.0+source"
 
 __all__ = [
     "AgentHarnessPlan",

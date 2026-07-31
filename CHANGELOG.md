@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+- `__version__` is derived from the installed distribution instead of a
+  hand-maintained literal, so it cannot drift from `pyproject.toml`. Guarded by
+  `tests/test_version.py`.
 - Docs corrected to name the `huldah-*` commands: the moved documentation still
   told readers to run `cairn-ui-sim`, `cairn-layout-load` and friends, none of
   which exist after the split.
