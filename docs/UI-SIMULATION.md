@@ -1,6 +1,6 @@
 # UI Simulation
 
-Cairn can use browser-driven UI simulations to collect evidence about human load in an actual interface. The intent is not to replace UX judgement with automation. It is to make the cognitive and social cost of a process step visible enough that an LLM, developer, or product team can discuss it directly.
+Huldah can use browser-driven UI simulations to collect evidence about human load in an actual interface. The intent is not to replace UX judgement with automation. It is to make the cognitive and social cost of a process step visible enough that an LLM, developer, or product team can discuss it directly.
 
 The first prototype is `huldah-ui-sim`. It delegates to Playwright from the target project, so Cairn does not need to carry a browser runtime as a hard dependency.
 
@@ -23,7 +23,7 @@ The useful unit of analysis is usually not just "the user clicks a button". A st
 - Adaptation: noticing how repeated use changes skill, trust, shortcuts, or
   organisational behaviour.
 
-Those phases map onto Cairn's human factors vocabulary. A scenario can name the human systems plausibly involved, such as attention, working memory, trust calibration, social risk, configuration burden, and context switching.
+Those phases map onto Huldah's human factors vocabulary. A scenario can name the human systems plausibly involved, such as attention, working memory, trust calibration, social risk, configuration burden, and context switching.
 
 ## Running A Scenario
 

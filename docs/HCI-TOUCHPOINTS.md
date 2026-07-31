@@ -1,6 +1,6 @@
 # HCI Touchpoint Analysis
 
-Cairn treats the user interface as part of the process, not as a cosmetic layer
+Huldah treats the user interface as part of the process, not as a cosmetic layer
 around it. If a human has to notice, interpret, decide, enter, verify, wait,
 recover, or explain something through a UI, that UI state is a human process
 touchpoint.

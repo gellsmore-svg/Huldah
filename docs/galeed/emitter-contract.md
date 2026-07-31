@@ -2,7 +2,7 @@
 
 Products should emit a small observation event whenever a user, agent, queue, or
 runtime step changes the human experience of the process. Galeed can store the
-event as a durable trace record; Cairn can then convert it into live-observation
+event as a durable trace record; Huldah can then convert it into live-observation
 evidence.
 
 ## Cairn Observation Event
@@ -33,7 +33,7 @@ Required fields:
 
 Recommended fields:
 
-- `ts`: ISO timestamp. Cairn can generate one if omitted.
+- `ts`: ISO timestamp. Huldah can generate one if omitted.
 - `severity`: `debug`, `info`, `warning`, `error`, or `critical`.
 - `tags`: process and risk cues such as `missing_context`, `missing_evidence`,
   `context_switch`, `waiting`, `retry`, `repair_turn`, or `escalation`.
